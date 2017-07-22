@@ -38,6 +38,7 @@
   padding:10px;
   position:relative;
   margin:10px;
+  width:auto;
 
   display:grid;
   grid-template-columns: repeat(100, 1%);
