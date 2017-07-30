@@ -1,29 +1,31 @@
 'use strict'
-let currentDocument = document.currentScript.ownerDocument;
+const uiOrganizationCardDoc = document._currentScript || document.currentScript;
+let template = uiOrganizationCardDoc.ownerDocument.querySelector('#ui-organization-card-view');
 
-class OrganizationCardViewController extends HTMLElement{
+class OrganizationCardViewController extends HTMLElement {
 
   constructor(){
     super();
-    const view = currentDocument.querySelector('#view').content.cloneNode(true);
-    this.appendChild(view);
   }
 
 	///STANDARD
 	connectedCallback() {
-		//console.log('connected');
+    console.log('connected');
+    const view = document.importNode(template.content, true);
+    let shadowRoot = this.attachShadow({mode: 'open'});
+    shadowRoot.appendChild(view);
 	}
 
 	disconnectedCallback() {
-		//console.log('disconnected');
+    console.log('disconnected');
 	}
 
 	attributeChangedCallback(attrName, oldVal, newVal) {
-		//console.log('attributeChanged');
+    console.log('attributeChanged');
 	}
 
 	adoptedCallback(){
-		//console.log('adoptedCallback');
+    console.log('adoptedCallback');
 	}
 }
 
