@@ -22,7 +22,7 @@ class OrganizationCardViewController extends HTMLElement {
     this.$container = this.shadowRoot.querySelector('.container');
     this.$image = this.shadowRoot.querySelector('#image');
     this.$name = this.shadowRoot.querySelector('#name');
-    this.$disamiguatingDescription = this.shadowRoot.querySelector('#disamiguatingDescription');
+    this.$disambiguatingDescription = this.shadowRoot.querySelector('#disambiguatingDescription');
     this.$addressLocality = this.shadowRoot.querySelector('#addressLocality');
     this.$addressRegion = this.shadowRoot.querySelector('#addressRegion');
     this.$description = this.shadowRoot.querySelector('#description');
