@@ -23,7 +23,8 @@ class OrganizationCardViewController extends HTMLElement {
     this.$image = this.shadowRoot.querySelector('#image');
     this.$name = this.shadowRoot.querySelector('#name');
     this.$disamiguatingDescription = this.shadowRoot.querySelector('#disamiguatingDescription');
-    this.$location = this.shadowRoot.querySelector('#location');
+    this.$addressLocality = this.shadowRoot.querySelector('#addressLocality');
+    this.$addressRegion = this.shadowRoot.querySelector('#addressRegion');
     this.$description = this.shadowRoot.querySelector('#description');
     this._updateRendering();
 	}
@@ -39,7 +40,6 @@ class OrganizationCardViewController extends HTMLElement {
 	attributeChangedCallback(attrName, oldVal, newVal) {
     let model = JSON.parse(newVal);
     this.model = new Organization(model);
-    console.log(this.model)
     this._updateRendering();
   }
 
@@ -50,7 +50,8 @@ class OrganizationCardViewController extends HTMLElement {
     if(this.$image){ this.$image.src = this.model.image; }
     if(this.$name){ this.$name.textContent = this.model.name; }
     if(this.$disambiguatingDescription){ this.$disambiguatingDescription.textContent = this.model.disambiguatingDescription; }
-    if(this.$location){ this.$location.textContent = this.model.location; }
+    if(this.$addressLocality){ this.$addressLocality.textContent = this.model.address.addressLocality; }
+    if(this.$addressRegion){ this.$addressRegion.textContent = this.model.address.addressRegion; }
     if(this.$description){ this.$description.textContent = this.model.description; }
   }
 
