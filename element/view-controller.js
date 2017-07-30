@@ -1,6 +1,6 @@
 'use strict'
 const uiOrganizationCardDoc = document._currentScript || document.currentScript;
-let template = uiOrganizationCardDoc.ownerDocument.querySelector('#ui-organization-card-view');
+let uiOrganizationCardTemplate = uiOrganizationCardDoc.ownerDocument.querySelector('#ui-organization-card-view');
 
 class OrganizationCardViewController extends HTMLElement {
 
@@ -11,14 +11,13 @@ class OrganizationCardViewController extends HTMLElement {
   constructor(){
     super();
     this.model = new Organization();
-    const view = document.importNode(template.content, true);
+    const view = document.importNode(uiOrganizationCardTemplate.content, true);
     this.shadowRoot = this.attachShadow({mode: 'open'});
     this.shadowRoot.appendChild(view);
   }
 
 	///STANDARD
 	connectedCallback() {
-    console.log('connected', this);
     this.$container = this.shadowRoot.querySelector('.container');
     this.$image = this.shadowRoot.querySelector('#image');
     this.$name = this.shadowRoot.querySelector('#name');
@@ -38,6 +37,7 @@ class OrganizationCardViewController extends HTMLElement {
 	}
 
 	attributeChangedCallback(attrName, oldVal, newVal) {
+    console.log('NEW VAL', newVal)
     let model = JSON.parse(newVal);
     this.model = new Organization(model);
     this._updateRendering();
