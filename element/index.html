@@ -26,11 +26,12 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      font-size:2em;
+      font-size:1.5em;
       padding:0px;
-      padding-top: 20px;
+      padding-top: 25px;
       margin:0px;
       padding-left:10px;
+			font-weight:500;
     }
 
     #disambiguatingDescriptionContainer, #locationContainer {
@@ -61,38 +62,60 @@
       width:calc(100% - 80px);
 			color:#8691a9;
 			font-size:1em;
-    }
-  </style>
+		}
 
-  <div class="container">
+		@media only screen and (min-width: 0px) {
+			#nameContainer {
+				font-size:1.1em;
+				font-weight:600;
+				padding-top: 1.75em;
+			}
+		}
+		@media only screen and (min-width: 600px) {
+			#nameContainer {
+				font-size:1.5em;
+				font-weight:600;
+				padding-top: 1em;
+			}
+		}
+		@media only screen and (min-width: 768px) {
+			#nameContainer {
+				font-size:2em;
+				padding-top: 0.7em;
+				font-weight:500;
+			}
+		}
+	</style>
 
-    <img id="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/500px-Google_%22G%22_Logo.svg.png" alt="Organization Logo">
+	<div class="container">
 
-    <div id="nameContainer">
-      <span id="name"> Google, Inc.  </span>
-    </div>
-    <div id="locationContainer">
-      <span id="addressLocality"> San Francisco </span>
-      <span id="addressRegion"> CA </span>
-    </div>
+		<img id="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/500px-Google_%22G%22_Logo.svg.png" alt="Organization Logo">
 
-
-    <div id="disambiguatingDescriptionContainer">
-      <span id="disambiguatingDescription"> Technology Company </span>
-    </div>
+		<div id="nameContainer">
+			<span id="name"> Google, Inc.  </span>
+		</div>
+		<div id="locationContainer">
+			<span id="addressLocality"> San Francisco </span>
+			<span id="addressRegion"> CA </span>
+		</div>
 
 
-    <p id="description">
-      One two three four five six seven eight nine ten.
-      One two three four five six seven eight nine ten.
-      One two three four five six seven eight nine ten.
-      One two three four five six seven eight nine ten.
-      One two three four five six seven eight nine ten.
-      One two three four five six seven eight nine ten.
-      One two three four five six seven eight nine ten.
-      One two three four five six seven eight nine ten.
-    </p>
-</div>
+		<div id="disambiguatingDescriptionContainer">
+			<span id="disambiguatingDescription"> Technology Company </span>
+		</div>
+
+
+		<p id="description">
+			One two three four five six seven eight nine ten.
+			One two three four five six seven eight nine ten.
+			One two three four five six seven eight nine ten.
+			One two three four five six seven eight nine ten.
+			One two three four five six seven eight nine ten.
+			One two three four five six seven eight nine ten.
+			One two three four five six seven eight nine ten.
+			One two three four five six seven eight nine ten.
+		</p>
+	</div>
 </template>
 
 <script type="text/javascript" src="ui-organization-card-data-controller.js"> </script>
