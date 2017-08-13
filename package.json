@@ -1,6 +1,6 @@
 {
   "name": "@josebarrios/ui-organization-card",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A set of custom element for job posting",
   "main": "index.js",
   "scripts": {
