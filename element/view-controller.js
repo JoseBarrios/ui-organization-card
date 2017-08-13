@@ -48,12 +48,12 @@ class OrganizationCardViewController extends HTMLElement {
   set shadowRoot(value){ this._shadowRoot = value}
 
   _updateRendering() {
-    if(this.$image){ this.$image.src = this.model.image; }
-    if(this.$name){ this.$name.textContent = this.model.name; }
-    if(this.$disambiguatingDescription){ this.$disambiguatingDescription.textContent = this.model.disambiguatingDescription; }
-    if(this.$addressLocality){ this.$addressLocality.textContent = this.model.address.addressLocality; }
-    if(this.$addressRegion){ this.$addressRegion.textContent = this.model.address.addressRegion; }
-    if(this.$description){ this.$description.textContent = this.model.description; }
+    if(this.$image && this.model.image){ this.$image.src = this.model.image; }
+    if(this.$name && this.model.name){ this.$name.textContent = this.model.name; }
+    if(this.$disambiguatingDescription && this.model.disambiguatingDescription){ this.$disambiguatingDescription.textContent = this.model.disambiguatingDescription; }
+    if(this.$addressLocality && this.model.address.addressLocality){ this.$addressLocality.textContent = this.model.address.addressLocality; }
+    if(this.$addressRegion && this.model.address.addressRegion){ this.$addressRegion.textContent = this.model.address.addressRegion; }
+    if(this.$description && this.model.description){ this.$description.textContent = this.model.description; }
   }
 
 }
