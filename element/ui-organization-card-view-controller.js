@@ -11,10 +11,10 @@ class OrganizationCardViewController extends HTMLElement {
 
   constructor(){
     super();
-    this.model = new Organization();
     const view = document.importNode(uiOrganizationCardTemplate.content, true);
     this.shadowRoot = this.attachShadow({mode: 'open'});
     this.shadowRoot.appendChild(view);
+		this.connected = false;
   }
 
 	///STANDARD
@@ -26,6 +26,7 @@ class OrganizationCardViewController extends HTMLElement {
     this.$addressLocality = this.shadowRoot.querySelector('#addressLocality');
     this.$addressRegion = this.shadowRoot.querySelector('#addressRegion');
     this.$description = this.shadowRoot.querySelector('#description');
+		this.connected = true;
     this._updateRendering();
 	}
 
@@ -34,7 +35,8 @@ class OrganizationCardViewController extends HTMLElement {
 	}
 
 	disconnectedCallback() {
-    //console.log('disconnected');
+		this.connected = false;
+		console.log('disconnected');
 	}
 
 	attributeChangedCallback(attrName, oldVal, newVal) {
@@ -47,13 +49,15 @@ class OrganizationCardViewController extends HTMLElement {
   set shadowRoot(value){ this._shadowRoot = value}
 
   _updateRendering() {
-		console.log('OBJ UI ORG CARD', this.model)
-    if(this.$image && this.model.image){ this.$image.src = this.model.image; }
-    if(this.$name && this.model.name){ this.$name.textContent = this.model.name; }
-    if(this.$disambiguatingDescription && this.model.disambiguatingDescription){ this.$disambiguatingDescription.textContent = this.model.disambiguatingDescription; }
-    if(this.$addressLocality && this.model.address.addressLocality){ this.$addressLocality.textContent = this.model.address.addressLocality; }
-    if(this.$addressRegion && this.model.address.addressRegion){ this.$addressRegion.textContent = this.model.address.addressRegion; }
-    if(this.$description && this.model.description){ this.$description.textContent = this.model.description; }
+		if(this.connected && this.model){
+			console.log('MODEL', this.model)
+			if(this.$image && this.model.image){ this.$image.src = this.model.image; }
+			if(this.$name && this.model.name){ this.$name.textContent = this.model.name; }
+			if(this.$disambiguatingDescription && this.model.disambiguatingDescription){ this.$disambiguatingDescription.textContent = this.model.disambiguatingDescription; }
+			if(this.$addressLocality && this.model.address.addressLocality){ this.$addressLocality.textContent = this.model.address.addressLocality; }
+			if(this.$addressRegion && this.model.address.addressRegion){ this.$addressRegion.textContent = this.model.address.addressRegion; }
+			if(this.$description && this.model.description){ this.$description.textContent = this.model.description; }
+		}
   }
 
 }
