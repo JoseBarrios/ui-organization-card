@@ -30,7 +30,6 @@
     "yarn": "^0.27.5"
   },
   "dependencies": {
-    "@josebarrios/organization": "^1.1.7",
-    "@josebarrios/ui-login": "^0.1.18"
+    "@josebarrios/organization": "^1.1.7"
   }
 }

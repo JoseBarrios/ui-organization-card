@@ -38,9 +38,8 @@ class OrganizationCardViewController extends HTMLElement {
 	}
 
 	attributeChangedCallback(attrName, oldVal, newVal) {
-    //console.log('NEW VAL', newVal)
-    let model = JSON.parse(newVal);
-    this.model = new Organization(model);
+		console.log('NEW VAL', typeof newVal, newVal)
+    this.model = new Organization(JSON.parse(newVal));
     this._updateRendering();
   }
 
@@ -48,6 +47,7 @@ class OrganizationCardViewController extends HTMLElement {
   set shadowRoot(value){ this._shadowRoot = value}
 
   _updateRendering() {
+		console.log('OBJ UI ORG CARD', this.model)
     if(this.$image && this.model.image){ this.$image.src = this.model.image; }
     if(this.$name && this.model.name){ this.$name.textContent = this.model.name; }
     if(this.$disambiguatingDescription && this.model.disambiguatingDescription){ this.$disambiguatingDescription.textContent = this.model.disambiguatingDescription; }
