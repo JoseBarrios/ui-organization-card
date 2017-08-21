@@ -3,11 +3,12 @@
 <meta name=viewport content="width=device-width, initial-scale=1">
 
 <body style="background-color:lightGray;padding:0px;margin:0px;">
+		<ui-organization-card></ui-organization-card>
 
-    <ui-organization-card model='{"image":"https://www.hispanicizewire.com/wp-content/uploads/2017/05/BE-FEATURED.jpg", "name":"Cognilab Technologies", "disambiguatingDescription": "Some Company", "address":{ "addressLocality":"Victoria", "addressRegion": "BC"}, "description":"Since 2005, Tipping Point Community has raised more than $150 million to educate, employ, house and support those in need in the Bay Area, impacting the lives of over 137,000 people last year alone. Tipping Point Community screens non-profits rigorously to find, fund and partner with the most promising groups helping low-income people achieve self-sufficiency. Beyond dollars, we provide our grantees with the communications, technical and management assistance they need to grow and increase their impact in the fight against poverty. Because our board underwrites all operating and fundraising expenses, 100% of every dollar donated is invested where it’s needed most." }'></ui-organization-card>
+    <ui-organization-card value='{"image":"https://tippingpoint.org/-/img/facebook-meta-tp-logo.png", "name":"Cognilab Technologies", "disambiguatingDescription": "Other Company", "address":{ "addressLocality":"Victoria", "addressRegion": "BC"}, "description":"Since 2005, Tipping Point Community has raised more than $150 million to educate, employ, house and support those in need in the Bay Area, impacting the lives of over 137,000 people last year alone. Tipping Point Community screens non-profits rigorously to find, fund and partner with the most promising groups helping low-income people achieve self-sufficiency. Beyond dollars, we provide our grantees with the communications, technical and management assistance they need to grow and increase their impact in the fight against poverty. Because our board underwrites all operating and fundraising expenses, 100% of every dollar donated is invested where it’s needed most." }'></ui-organization-card>
 
   <div style="width:10%;">
-    <ui-organization-card model='{"image":"https://tippingpoint.org/-/img/facebook-meta-tp-logo.png", "name":"Cognilab Technologies", "disambiguatingDescription": "Other Company", "address":{ "addressLocality":"Victoria", "addressRegion": "BC"}, "description":"Since 2005, Tipping Point Community has raised more than $150 million to educate, employ, house and support those in need in the Bay Area, impacting the lives of over 137,000 people last year alone. Tipping Point Community screens non-profits rigorously to find, fund and partner with the most promising groups helping low-income people achieve self-sufficiency. Beyond dollars, we provide our grantees with the communications, technical and management assistance they need to grow and increase their impact in the fight against poverty. Because our board underwrites all operating and fundraising expenses, 100% of every dollar donated is invested where it’s needed most." }'></ui-organization-card>
+    <ui-organization-card value='{"image":"https://tippingpoint.org/-/img/facebook-meta-tp-logo.png", "name":"Cognilab Technologies", "disambiguatingDescription": "Other Company", "address":{ "addressLocality":"Victoria", "addressRegion": "BC"}, "description":"Since 2005, Tipping Point Community has raised more than $150 million to educate, employ, house and support those in need in the Bay Area, impacting the lives of over 137,000 people last year alone. Tipping Point Community screens non-profits rigorously to find, fund and partner with the most promising groups helping low-income people achieve self-sufficiency. Beyond dollars, we provide our grantees with the communications, technical and management assistance they need to grow and increase their impact in the fight against poverty. Because our board underwrites all operating and fundraising expenses, 100% of every dollar donated is invested where it’s needed most." }'></ui-organization-card>
   </div>
 
   <!--<div style="width:20%">-->
@@ -39,3 +40,12 @@
   <!--</div>-->
 
 </body>
+<script>
+	const $jobCard = document.querySelector('ui-organization-card');
+
+$jobCard.addEventListener('update', function(e){
+	console.log('CARD WAS UPDATED', e.detail)
+})
+
+	$jobCard.value = {"image":"https://tippingpoint.org/-/img/facebook-meta-tp-logo.png", "name":"Modified Value", "disambiguatingDescription": "Other Company", "address":{ "addressLocality":"Victoria", "addressRegion": "BC"}, "description":"Since 2005, Tipping Point Community has raised more than $150 million to educate, employ, house and support those in need in the Bay Area, impacting the lives of over 137,000 people last year alone. Tipping Point Community screens non-profits rigorously to find, fund and partner with the most promising groups helping low-income people achieve self-sufficiency. Beyond dollars, we provide our grantees with the communications, technical and management assistance they need to grow and increase their impact in the fight against poverty. Because our board underwrites all operating and fundraising expenses, 100% of every dollar donated is invested where it’s needed most." }
+</script>

@@ -6,15 +6,18 @@ const uiOrganizationCardTemplate = uiOrganizationCardDoc.ownerDocument.querySele
 class OrganizationCardViewController extends HTMLElement {
 
   static get observedAttributes(){
-    return ['model'];
+    return ['value'];
   }
 
   constructor(){
     super();
+    this.model = new Organization();
     const view = document.importNode(uiOrganizationCardTemplate.content, true);
     this.shadowRoot = this.attachShadow({mode: 'open'});
     this.shadowRoot.appendChild(view);
 		this.connected = false;
+
+		this.defaultEventName = 'update';
   }
 
 	///STANDARD
@@ -26,6 +29,7 @@ class OrganizationCardViewController extends HTMLElement {
     this.$addressLocality = this.shadowRoot.querySelector('#addressLocality');
     this.$addressRegion = this.shadowRoot.querySelector('#addressRegion');
     this.$description = this.shadowRoot.querySelector('#description');
+
 		this.connected = true;
     this._updateRendering();
 	}
@@ -40,17 +44,27 @@ class OrganizationCardViewController extends HTMLElement {
 	}
 
 	attributeChangedCallback(attrName, oldVal, newVal) {
-		console.log('NEW VAL', typeof newVal, newVal)
-    this.model = new Organization(JSON.parse(newVal));
-    this._updateRendering();
+		switch(attrName){
+			case 'value':
+				this.value = JSON.parse(newVal);
+				break;
+			default:
+				console.warn(`Attribute ${attrName} is not handled, you should probably do that`);
+		}
   }
 
   get shadowRoot(){return this._shadowRoot;}
   set shadowRoot(value){ this._shadowRoot = value}
 
+  get value(){return Organization.assignedProperties(this.model);}
+	set value(value){
+		this.model = new Organization(value);
+		this._updateRendering();
+		this.dispatchEvent(new CustomEvent(this.defaultEventName, {detail: Organization.assignedProperties(this.model)}))
+	}
+
   _updateRendering() {
 		if(this.connected && this.model){
-			console.log('MODEL', this.model)
 			if(this.$image && this.model.image){ this.$image.src = this.model.image; }
 			if(this.$name && this.model.name){ this.$name.textContent = this.model.name; }
 			if(this.$disambiguatingDescription && this.model.disambiguatingDescription){ this.$disambiguatingDescription.textContent = this.model.disambiguatingDescription; }
@@ -59,7 +73,6 @@ class OrganizationCardViewController extends HTMLElement {
 			if(this.$description && this.model.description){ this.$description.textContent = this.model.description; }
 		}
   }
-
 }
 
 window.customElements.define('ui-organization-card', OrganizationCardViewController);
