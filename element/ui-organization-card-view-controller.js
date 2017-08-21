@@ -56,12 +56,17 @@ class OrganizationCardViewController extends HTMLElement {
   get shadowRoot(){return this._shadowRoot;}
   set shadowRoot(value){ this._shadowRoot = value}
 
-  get value(){return Organization.assignedProperties(this.model);}
+	get value(){
+		let value = Organization.assignedProperties(this.model);
+		value.address = PostalAddress.assignedProperties(this.model.address);
+		return value;
+	}
 	set value(value){
 		this.model = new Organization(value);
 		this.model.address = new PostalAddress(value.address);
 		this._updateRendering();
 		this._updateEvent()
+		this.setAttribute('value', JSON.stringify(this.value));
 	}
 
 	get image(){ return this.model.image; }
@@ -69,6 +74,7 @@ class OrganizationCardViewController extends HTMLElement {
 		this.model.image = value;
 		this._updateRendering();
 		this._updateEvent();
+		this.setAttribute('value', JSON.stringify(this.value));
 	}
 
 
@@ -77,6 +83,7 @@ class OrganizationCardViewController extends HTMLElement {
 		this.model.name = value;
 		this._updateRendering();
 		this._updateEvent()
+		this.setAttribute('value', JSON.stringify(this.value));
 	}
 
 	get address(){ return PostalAddress.assignedProperties(this.model.address); }
@@ -84,6 +91,7 @@ class OrganizationCardViewController extends HTMLElement {
 		this.model.address = new PostalAddress(value);
 		this._updateRendering();
 		this._updateEvent();
+		this.setAttribute('value', JSON.stringify(this.value));
 	}
 
 	get disambiguatingDescription(){ return this.model.disambiguatingDescription; }
@@ -91,6 +99,7 @@ class OrganizationCardViewController extends HTMLElement {
 		this.model.disambiguatingDescription = value;
 		this._updateRendering();
 		this._updateEvent();
+		this.setAttribute('value', JSON.stringify(this.value));
 	}
 
 	get description(){ return this.model.description; }
@@ -98,6 +107,7 @@ class OrganizationCardViewController extends HTMLElement {
 		this.model.description = value;
 		this._updateRendering();
 		this._updateEvent();
+		this.setAttribute('value', JSON.stringify(this.value));
 	}
 
 
