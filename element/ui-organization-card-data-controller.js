@@ -60,204 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-//WEBPACK: Makes it browser friendly
-window.Organization = __webpack_require__(1)
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const Thing = __webpack_require__(2);
-const TYPE = 'Organization'
-const EMPTY = '';
-
-class Organization extends Thing {
-
-  static get type(){ return TYPE; }
-
-  constructor(model){
-    model = model || {};
-    super(model);
-
-    this.address = model.address;
-    this.aggregateRating = model.aggregateRating
-    this.alumni = model.alumni;
-    this.areaServed = model.areaServed;
-    this.award = model.award;
-    this.brand = model.brand;
-    this.contactPoint = model.contactPoint;
-    this.department = model.department;
-    this.dissolutionDate = model.dissolutionDate;
-    this.duns = model.duns;
-    this.email = model.email;
-    this.employee = model.employee;
-    this.event = model.event;
-    this.faxNumber = model.faxNumber;
-    this.founder = model.founder;
-    this.foundingDate = model.foundingDate;
-    this.foundingLocation = model.foundingLocation;
-    this.funder = model.funder;
-    this.globalLocationNumber = model.globalLocationNumber;
-    this.hasOfferCatalog = model.hasOfferCatalog;
-    this.hasPOS = model.hasPOS;
-    this.isicV4 = model.isicV4;
-    this.legalName = model.legalName;
-    this.leiCode = model.leiCode;
-    this.location = model.location;
-    this.logo = model.logo;
-    this.makesOffer = model.makesOffer;
-    this.member = model.member;
-    this.memberOf = model.memberOf;
-    this.naics = model.naics;
-    this.numberOfEmployees = model.numberOfEmployees;
-    this.owns = model.owns;
-    this.parentOrganization = model.parentOrganization;
-    this.review = model.review;
-    this.seeks = model.seeks;
-    this.sponsor = model.sponsor;
-    this.subOrganization = model.subOrganization;
-    this.taxID = model.taxID;
-    this.telephone = model.telephone;
-    this.vatID = model.vatID;
-  }
-
-  get address(){ return this.computed.address; }
-  set address(value){ this.computed.address = value; }
-
-  get aggregateRating(){ return this.computed.aggregateRating; }
-  set aggregateRating(value){ this.computed.aggregateRating = value; }
-
-
-  get alumni(){ return this.computed.alumni; }
-  set alumni(value){ this.computed.alumni = value; }
-
-  get areaServed(){ return this.computed.areaServed; }
-  set areaServed(value){ this.computed.areaServed = value; }
-
-  get award(){ return this.computed.award; }
-  set award(value){ this.computed.award = value; }
-
-
-  get brand(){ return this.computed.brand; }
-  set brand(value){ this.computed.brand = value; }
-
-  get contactPoint(){ return this.computed.contactPoint; }
-  set contactPoint(value){ this.computed.contactPoint = value; }
-
-  get department(){ return this.computed.department; }
-  set department(value){ this.computed.department = value; }
-
-  get dissolutionDate(){ return this.computed.dissolutionDate; }
-  set dissolutionDate(value){ this.computed.dissolutionDate = value; }
-
-  get duns(){ return this.computed.duns; }
-  set duns(value){ this.computed.duns = value; }
-
-  get email(){ return this.computed.email; }
-  set email(value){ this.computed.email = value; }
-
-  get employee(){ return this.computed.employee; }
-  set employee(value){ this.computed.employee = value; }
-
-  get event(){ return this.computed.event; }
-  set event(value){ this.computed.event = value; }
-
-  get faxNumber(){ return this.computed.faxNumber; }
-  set faxNumber(value){ this.computed.faxNumber = value; }
-
-  get founder(){ return this.computed.founder; }
-  set founder(value){ this.computed.founder = value; }
-
-  get foundingDate(){ return this.computed.foundingDate; }
-  set foundingDate(value){ this.computed.foundingDate = value; }
-
-  get foundingLocation(){ return this.computed.foundingLocation; }
-  set foundingLocation(value){ this.computed.foundingLocation = value; }
-
-  get funder(){ return this.computed.funder; }
-  set funder(value){ this.computed.funder = value; }
-
-  get globalLocationNumber(){ return this.computed.globalLocationNumber; }
-  set globalLocationNumber(value){ this.computed.globalLocationNumber = value; }
-
-  get hasOfferCatalog(){ return this.computed.hasOfferCatalog; }
-  set hasOfferCatalog(value){ this.computed.hasOfferCatalog = value; }
-
-  get hasPOS(){ return this.computed.hasPOS; }
-  set hasPOS(value){ this.computed.hasPOS = value; }
-
-  get isicV4(){ return this.computed.isicV4; }
-  set isicV4(value){ this.computed.isicV4 = value; }
-
-  get legalName(){ return this.computed.legalName; }
-  set legalName(value){ this.computed.legalName = value; }
-
-  get leiCode(){ return this.computed.leiCode; }
-  set leiCode(value){ this.computed.leiCode = value; }
-
-  get location(){ return this.computed.location; }
-  set location(value){ this.computed.location = value; }
-
-  get logo(){ return this.computed.logo; }
-  set logo(value){ this.computed.logo = value; }
-
-  get makesOffer(){ return this.computed.makesOffer; }
-  set makesOffer(value){ this.computed.makesOffer = value; }
-
-  get member(){ return this.computed.member; }
-  set member(value){ this.computed.member = value; }
-
-  get memberOf(){ return this.computed.memberOf; }
-  set memberOf(value){ this.computed.memberOf = value; }
-
-  get naics(){ return this.computed.naics; }
-  set naics(value){ this.computed.naics = value; }
-
-  get numberOfEmployees(){ return this.computed.numberOfEmployees; }
-  set numberOfEmployees(value){ this.computed.numberOfEmployees = value; }
-
-  get owns(){ return this.computed.owns; }
-  set owns(value){ this.computed.owns = value; }
-
-  get parentOrganization(){ return this.computed.parentOrganization; }
-  set parentOrganization(value){ this.computed.parentOrganization = value; }
-
-  get review(){ return this.computed.review; }
-  set review(value){ this.computed.review = value; }
-
-  get seeks(){ return this.computed.seeks; }
-  set seeks(value){ this.computed.seeks = value; }
-
-  get sponsor(){ return this.computed.sponsor; }
-  set sponsor(value){ this.computed.sponsor = value; }
-
-  get subOrganization(){ return this.computed.subOrganization; }
-  set subOrganization(value){ this.computed.subOrganization = value; }
-
-  get taxID(){ return this.computed.taxID; }
-  set taxID(value){ this.computed.taxID = value; }
-
-  get telephone(){ return this.computed.telephone; }
-  set telephone(value){ this.computed.telephone = value; }
-
-  get vatID(){ return this.computed.vatID; }
-  set vatID(value){ this.computed.vatID = value; }
-
-}
-
-module.exports = Organization;
-
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -553,6 +360,200 @@ class Thing {
 }
 
 module.exports = Thing;
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+//WEBPACK: Makes it browser friendly
+window.Organization = __webpack_require__(2);
+window.PostalAddress = __webpack_require__(6);
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Thing = __webpack_require__(0);
+const TYPE = 'Organization'
+const EMPTY = '';
+
+class Organization extends Thing {
+
+  static get type(){ return TYPE; }
+
+  constructor(model){
+    model = model || {};
+    super(model);
+
+    this.address = model.address;
+    this.aggregateRating = model.aggregateRating
+    this.alumni = model.alumni;
+    this.areaServed = model.areaServed;
+    this.award = model.award;
+    this.brand = model.brand;
+    this.contactPoint = model.contactPoint;
+    this.department = model.department;
+    this.dissolutionDate = model.dissolutionDate;
+    this.duns = model.duns;
+    this.email = model.email;
+    this.employee = model.employee;
+    this.event = model.event;
+    this.faxNumber = model.faxNumber;
+    this.founder = model.founder;
+    this.foundingDate = model.foundingDate;
+    this.foundingLocation = model.foundingLocation;
+    this.funder = model.funder;
+    this.globalLocationNumber = model.globalLocationNumber;
+    this.hasOfferCatalog = model.hasOfferCatalog;
+    this.hasPOS = model.hasPOS;
+    this.isicV4 = model.isicV4;
+    this.legalName = model.legalName;
+    this.leiCode = model.leiCode;
+    this.location = model.location;
+    this.logo = model.logo;
+    this.makesOffer = model.makesOffer;
+    this.member = model.member;
+    this.memberOf = model.memberOf;
+    this.naics = model.naics;
+    this.numberOfEmployees = model.numberOfEmployees;
+    this.owns = model.owns;
+    this.parentOrganization = model.parentOrganization;
+    this.review = model.review;
+    this.seeks = model.seeks;
+    this.sponsor = model.sponsor;
+    this.subOrganization = model.subOrganization;
+    this.taxID = model.taxID;
+    this.telephone = model.telephone;
+    this.vatID = model.vatID;
+  }
+
+  get address(){ return this.computed.address; }
+  set address(value){ this.computed.address = value; }
+
+  get aggregateRating(){ return this.computed.aggregateRating; }
+  set aggregateRating(value){ this.computed.aggregateRating = value; }
+
+
+  get alumni(){ return this.computed.alumni; }
+  set alumni(value){ this.computed.alumni = value; }
+
+  get areaServed(){ return this.computed.areaServed; }
+  set areaServed(value){ this.computed.areaServed = value; }
+
+  get award(){ return this.computed.award; }
+  set award(value){ this.computed.award = value; }
+
+
+  get brand(){ return this.computed.brand; }
+  set brand(value){ this.computed.brand = value; }
+
+  get contactPoint(){ return this.computed.contactPoint; }
+  set contactPoint(value){ this.computed.contactPoint = value; }
+
+  get department(){ return this.computed.department; }
+  set department(value){ this.computed.department = value; }
+
+  get dissolutionDate(){ return this.computed.dissolutionDate; }
+  set dissolutionDate(value){ this.computed.dissolutionDate = value; }
+
+  get duns(){ return this.computed.duns; }
+  set duns(value){ this.computed.duns = value; }
+
+  get email(){ return this.computed.email; }
+  set email(value){ this.computed.email = value; }
+
+  get employee(){ return this.computed.employee; }
+  set employee(value){ this.computed.employee = value; }
+
+  get event(){ return this.computed.event; }
+  set event(value){ this.computed.event = value; }
+
+  get faxNumber(){ return this.computed.faxNumber; }
+  set faxNumber(value){ this.computed.faxNumber = value; }
+
+  get founder(){ return this.computed.founder; }
+  set founder(value){ this.computed.founder = value; }
+
+  get foundingDate(){ return this.computed.foundingDate; }
+  set foundingDate(value){ this.computed.foundingDate = value; }
+
+  get foundingLocation(){ return this.computed.foundingLocation; }
+  set foundingLocation(value){ this.computed.foundingLocation = value; }
+
+  get funder(){ return this.computed.funder; }
+  set funder(value){ this.computed.funder = value; }
+
+  get globalLocationNumber(){ return this.computed.globalLocationNumber; }
+  set globalLocationNumber(value){ this.computed.globalLocationNumber = value; }
+
+  get hasOfferCatalog(){ return this.computed.hasOfferCatalog; }
+  set hasOfferCatalog(value){ this.computed.hasOfferCatalog = value; }
+
+  get hasPOS(){ return this.computed.hasPOS; }
+  set hasPOS(value){ this.computed.hasPOS = value; }
+
+  get isicV4(){ return this.computed.isicV4; }
+  set isicV4(value){ this.computed.isicV4 = value; }
+
+  get legalName(){ return this.computed.legalName; }
+  set legalName(value){ this.computed.legalName = value; }
+
+  get leiCode(){ return this.computed.leiCode; }
+  set leiCode(value){ this.computed.leiCode = value; }
+
+  get location(){ return this.computed.location; }
+  set location(value){ this.computed.location = value; }
+
+  get logo(){ return this.computed.logo; }
+  set logo(value){ this.computed.logo = value; }
+
+  get makesOffer(){ return this.computed.makesOffer; }
+  set makesOffer(value){ this.computed.makesOffer = value; }
+
+  get member(){ return this.computed.member; }
+  set member(value){ this.computed.member = value; }
+
+  get memberOf(){ return this.computed.memberOf; }
+  set memberOf(value){ this.computed.memberOf = value; }
+
+  get naics(){ return this.computed.naics; }
+  set naics(value){ this.computed.naics = value; }
+
+  get numberOfEmployees(){ return this.computed.numberOfEmployees; }
+  set numberOfEmployees(value){ this.computed.numberOfEmployees = value; }
+
+  get owns(){ return this.computed.owns; }
+  set owns(value){ this.computed.owns = value; }
+
+  get parentOrganization(){ return this.computed.parentOrganization; }
+  set parentOrganization(value){ this.computed.parentOrganization = value; }
+
+  get review(){ return this.computed.review; }
+  set review(value){ this.computed.review = value; }
+
+  get seeks(){ return this.computed.seeks; }
+  set seeks(value){ this.computed.seeks = value; }
+
+  get sponsor(){ return this.computed.sponsor; }
+  set sponsor(value){ this.computed.sponsor = value; }
+
+  get subOrganization(){ return this.computed.subOrganization; }
+  set subOrganization(value){ this.computed.subOrganization = value; }
+
+  get taxID(){ return this.computed.taxID; }
+  set taxID(value){ this.computed.taxID = value; }
+
+  get telephone(){ return this.computed.telephone; }
+  set telephone(value){ this.computed.telephone = value; }
+
+  get vatID(){ return this.computed.vatID; }
+  set vatID(value){ this.computed.vatID = value; }
+
+}
+
+module.exports = Organization;
 
 
 /***/ }),
@@ -17700,6 +17701,240 @@ module.exports = function(module) {
 	}
 	return module;
 };
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+const ContactPoint = __webpack_require__(7);
+
+const EMPTY = '';
+const TYPE = 'PostalAddress'
+
+class PostalAddress extends ContactPoint {
+
+  static get type(){ return TYPE; }
+
+  constructor(model){
+    model = model || {};
+    super(model);
+
+    this.addressCountry = model.addressCountry;
+    this.addressLocality = model.addressLocality;
+    this.addressRegion = model.addressRegion;
+    this.postOfficeBoxNumber = model.postOfficeBoxNumber;
+    this.postalCode = model.postalCode;
+    this.streetAddress = model.streetAddress;
+  }
+
+  get type(){ return TYPE; }
+  set type(value) {}
+
+  get addressCountry(){ return this.computed.addressCountry; }
+  set addressCountry(value){
+    if(ContactPoint.isEmpty(value)){ this.computed.addressCountry = EMPTY}
+    else if(ContactPoint.isString(value)){ this.computed.addressCountry = value }
+    else if(ContactPoint.isObject(value)){ this.computed.addressCountry = value }
+    else { ContactPoint.logError(this.constructor.name+': addressCountry must be a string, or object', 'type') }
+  }
+  get addressLocality(){ return this.computed.addressLocality; }
+  set addressLocality(value){
+    if(ContactPoint.isEmpty(value)){ this.computed.addressLocality = EMPTY}
+    else if(ContactPoint.isString(value)){ this.computed.addressLocality = value }
+    else { ContactPoint.logError(this.constructor.name+': addressLocality must be a string', 'type') }
+  }
+  get addressRegion(){ return this.computed.addressRegion; }
+  set addressRegion(value){
+    if(ContactPoint.isEmpty(value)){ this.computed.addressRegion = EMPTY}
+    else if(ContactPoint.isString(value)){ this.computed.addressRegion = value }
+    else { ContactPoint.logError(this.constructor.name+': addressRegion must be a string', 'type') }
+  }
+  get postOfficeBoxNumber(){ return this.computed.postOfficeBoxNumber; }
+  set postOfficeBoxNumber(value){
+    if(ContactPoint.isEmpty(value)){ this.computed.postOfficeBoxNumber = EMPTY}
+    else if(ContactPoint.isString(value)){ this.computed.postOfficeBoxNumber = value }
+    else { ContactPoint.logError(this.constructor.name+': postPOfficeBoxNumber must be a string', 'type') }
+  }
+  get postalCode(){ return this.computed.postalCode; }
+  set postalCode(value){
+    if(ContactPoint.isEmpty(value)){ this.computed.postalCode = EMPTY}
+    else if(ContactPoint.isString(value)){ this.computed.postalCode = value }
+    else { ContactPoint.logError(this.constructor.name+': postalCode must be a string', 'type') }
+  }
+  get streetAddress(){ return this.computed.streetAddress; }
+  set streetAddress(value){
+    if(ContactPoint.isEmpty(value)){ this.computed.streetAddress = EMPTY}
+    else if(ContactPoint.isString(value)){ this.computed.streetAddress = value }
+    else { ContactPoint.logError(this.constructor.name+': streetAddresstreetAddress must be a string', 'type') }
+  }
+
+
+  formatted(type='canada'){
+    type = type.toUpperCase();
+    var format = '';
+    switch(type){
+      case 'CANADA':
+        format = `${this.streetAddress}.
+        ${this.addressLocality}, ${this.addressRegion} ${this.postalCode}
+        ${this.addressCountry}`
+        break;
+      default:
+        console.error('NO FORMAT FOUND');
+    }
+    return format;
+  }
+}
+
+module.exports = PostalAddress;
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+const StructuredValue = __webpack_require__(8);
+const EMPTY = '';
+
+class ContactPoint extends StructuredValue {
+
+  constructor(model){
+    model = model || {};
+    super(model);
+
+    this.areaServed = model.areaServed;
+    this.availableLanguage = model.availableLanguage;
+    this.contactOption = model.contactOption;
+    this.contactType = model.contactType;
+    this.email = model.email;
+    this.faxNumber = model.faxNumber;
+    this.hoursAvailable = model.hoursAvailable;
+    this.productSupported = model.productSupported;
+    this.telephone= model.telephone;
+
+  }
+
+  get areaServed(){ return this.computed.areaServed; }
+  set areaServed(value){
+    if(StructuredValue.isEmpty(value)){ this.computed.areaServed = EMPTY}
+    else if(StructuredValue.isString(value)){ this.computed.areaServed = value }
+    else if(StructuredValue.isObject(value)){ this.computed.areaServed = value }
+    else if(StructuredValue.isArray(value)){ this.computed.areaServed = value }
+    else { StructuredValue.logError(this.constructor.name+': areaServed must be a string, object, or array', 'type') }
+  }
+
+  get availableLanguage(){ return this.computed.availableLanguage; }
+  set availableLanguage(value){
+    if(StructuredValue.isEmpty(value)){ this.computed.availableLanguage = EMPTY}
+    else if(StructuredValue.isString(value)){ this.computed.availableLanguage = value }
+    else if(StructuredValue.isObject(value)){ this.computed.availableLanguage = value }
+    else if(StructuredValue.isArray(value)){ this.computed.availableLanguage = value }
+    else { StructuredValue.logError(this.constructor.name+': availableLanguage must be a string, object, or array', 'type') }
+  }
+
+  get contactOption(){ return this.computed.contactOption; }
+  set contactOption(value){
+    if(StructuredValue.isEmpty(value)){ this.computed.contactOption = EMPTY}
+    else if(StructuredValue.isString(value)){ this.computed.contactOption = value }
+    else if(StructuredValue.isObject(value)){ this.computed.contactOption = value }
+    else if(StructuredValue.isArray(value)){ this.computed.contactOption = value }
+    else { StructuredValue.logError(this.constructor.name+': contactOption must be a string, object, or array', 'type') }
+  }
+
+  get contactType(){ return this.computed.contactType; }
+  set contactType(value){
+    if(StructuredValue.isEmpty(value)){ this.computed.contactType = EMPTY}
+    else if(StructuredValue.isString(value)){ this.computed.contactType = value }
+    else if(StructuredValue.isObject(value)){ this.computed.contactType = value }
+    else { StructuredValue.logError(this.constructor.name+': contactType must be a string, or object', 'type') }
+  }
+
+  get email(){ return this.computed.email; }
+  set email(value){
+    if(StructuredValue.isEmpty(value)){ this.computed.email = EMPTY}
+    else if(StructuredValue.isString(value)){
+      let email = this.lodash.toLower(value);
+      email = this.lodash.trim(email);
+      this.computed.email = email;
+    } else { StructuredValue.logError(this.constructor.name+': email must be a string, object, or array', 'type') }
+  }
+
+  get faxNumber(){ return this.computed.faxNumber; }
+  set faxNumber(value){
+    if(StructuredValue.isEmpty(value)){ this.computed.faxNumber = EMPTY}
+    else if(StructuredValue.isNumber(value)){ this.computed.faxNumber = value }
+    else { StructuredValue.logError(this.constructor.name+': faxNumber must be a number', 'type') }
+  }
+
+  get hoursAvailable(){ return this.computed.hoursAvailable; }
+  set hoursAvailable(value){
+    if(StructuredValue.isEmpty(value)){ this.computed.hoursAvailable = EMPTY}
+    else if(StructuredValue.isString(value)){ this.computed.hoursAvailable = value }
+    else if(StructuredValue.isObject(value)){ this.computed.hoursAvailable = value }
+    else if(StructuredValue.isArray(value)){ this.computed.hoursAvailable = value }
+    else { StructuredValue.logError(this.constructor.name+': hoursAvailable must be a string, object, or array', 'type') }
+  }
+
+  get productSupported(){ return this.computed.productSupported; }
+  set productSupported(value){
+    if(StructuredValue.isEmpty(value)){ this.computed.productSupported = EMPTY}
+    else if(StructuredValue.isString(value)){ this.computed.productSupported = value }
+    else if(StructuredValue.isObject(value)){ this.computed.productSupported = value }
+    else if(StructuredValue.isArray(value)){ this.computed.productSupported = value }
+    else { StructuredValue.logError(this.constructor.name+': productSupported must be a string, object, or array', 'type') }
+  }
+
+  get telephone(){ return this.computed.telephone; }
+  set telephone(value){
+    if(StructuredValue.isEmpty(value)){ this.computed.telephone = EMPTY}
+    else if(StructuredValue.isString(value)){ this.computed.telephone = value }
+    else if(StructuredValue.isNumber(value)){ this.computed.telephone = value }
+    else if(StructuredValue.isObject(value)){ this.computed.telephone = value }
+    else if(StructuredValue.isArray(value)){ this.computed.telephone = value }
+    else { StructuredValue.logError(this.constructor.name+': telephone must be a string, object, number or array', 'type') }
+  }
+}
+
+module.exports = ContactPoint;
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Intangible = __webpack_require__(9);
+
+class StructuredValue extends Intangible{
+    constructor(model){
+      model = model || {};
+      super(model)
+    }
+}
+
+module.exports = StructuredValue;
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Thing = __webpack_require__(0);
+
+class Intangible extends Thing{
+
+  constructor(model){
+    model = model || {};
+    super(model)
+  }
+}
+
+module.exports = Intangible;
 
 
 /***/ })
