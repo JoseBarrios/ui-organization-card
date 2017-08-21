@@ -66,7 +66,6 @@ class OrganizationCardViewController extends HTMLElement {
 		this.model.address = new PostalAddress(value.address);
 		this._updateRendering();
 		this._updateEvent()
-		this.setAttribute('value', JSON.stringify(this.value));
 	}
 
 	get image(){ return this.model.image; }
