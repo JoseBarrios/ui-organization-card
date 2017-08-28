@@ -122,8 +122,19 @@ class OrganizationCardViewController extends HTMLElement {
 			if(this.$image && this.model.image){ this.$image.src = this.model.image; }
 			if(this.$name && this.model.name){ this.$name.textContent = this.model.name; }
 			if(this.$disambiguatingDescription && this.model.disambiguatingDescription){ this.$disambiguatingDescription.textContent = this.model.disambiguatingDescription; }
-			if(this.$addressLocality && this.model.address && this.model.address.addressLocality){ this.$addressLocality.textContent = this.model.address.addressLocality; }
+
+			if(this.$addressLocality && this.model.address && this.model.address.addressLocality){
+				if(this.model.address.addressRegion){
+					this.$addressLocality.textContent = this.model.address.addressLocality+', ';
+				}else{
+					this.$addressLocality.textContent = this.model.address.addressLocality;
+				}
+			}
+			else if(this.model.address && !this.model.address.addressLocality) { this.$addressLocality.hidden = true; }
+
 			if(this.$addressRegion && this.model.address && this.model.address.addressRegion){ this.$addressRegion.textContent = this.model.address.addressRegion; }
+			else if(this.model.address && !this.model.address.addressRegion) { this.$addressRegion.hidden = true; }
+
 			if(this.$description && this.model.description){ this.$description.textContent = this.model.description; }
 		}
   }
