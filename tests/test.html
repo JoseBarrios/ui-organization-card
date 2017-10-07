@@ -42,6 +42,9 @@
 </body>
 <script>
 const $jobCard = document.querySelector('ui-organization-card');
+//$jobCard.address = { "addressLocality":"addressLocality" }
+//$jobCard.address = { "addressRegion":"addressRegion" }
+//$jobCard.address = { "addressRegion":"addressRegion", "addressLocality":"addressLocality" }
 
 $jobCard.addEventListener('update', function(e){
 	console.log('CARD WAS UPDATED', e.detail)
