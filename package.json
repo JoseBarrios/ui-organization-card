@@ -1,36 +1,35 @@
 {
-  "name": "@josebarrios/ui-organization-card",
-  "version": "0.2.10",
-  "description": "A set of custom element for job posting",
-  "main": "index.js",
-  "scripts": {
-    "build": "./node_modules/yarn/bin/yarn upgrade; ./node_modules/webpack/bin/webpack.js",
-    "test": "./node_modules/http-server/bin/http-server"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JoseBarrios/ui-organization-card.git"
-  },
-  "keywords": [
-    "custom",
-    "element",
-    "class"
-  ],
-  "browser": "browser.js",
-  "author": "JoseBarrios",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/JoseBarrios/ui-organization-card/issues"
-  },
-  "homepage": "https://github.com/JoseBarrios/ui-organization-card#readme",
-  "devDependencies": {
-    "http-server": "^0.10.0",
-    "mocha": "^3.4.2",
-    "webpack": "^3.3.0",
-    "yarn": "^0.27.5"
-  },
-  "dependencies": {
-    "@josebarrios/organization": "^1.1.7",
-    "@josebarrios/postal-address": "^0.1.7"
-  }
+	"name": "ui-organization-card",
+	"version": "0.1.0",
+	"description": "A set of custom element for job posting",
+	"main": "index.js",
+	"scripts": {
+		"build": "npm upgrade; ./node_modules/webpack/bin/webpack.js",
+		"test": "npm run-script build; ./node_modules/http-server/bin/http-server"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/JoseBarrios/ui-organization-card.git"
+	},
+	"keywords": [
+		"custom",
+		"element",
+		"class"
+	],
+	"browser": "browser.js",
+	"author": "JoseBarrios",
+	"license": "UNLICENSED",
+	"bugs": {
+		"url": "https://github.com/JoseBarrios/ui-organization-card/issues"
+	},
+	"homepage": "https://github.com/JoseBarrios/ui-organization-card#readme",
+	"devDependencies": {
+		"http-server": "^0.10.0",
+		"mocha": "^3.5.3",
+		"webpack": "^3.10.0"
+	},
+	"dependencies": {
+		"dc-organization": "^0.1.0",
+		"dc-postal-address": "^0.1.0"
+	}
 }

@@ -1,3 +1,3 @@
 //WEBPACK: Makes it browser friendly
-window.Organization = require('@josebarrios/organization');
-window.PostalAddress = require('@josebarrios/postal-address');
+window.Organization = require('dc-organization');
+window.PostalAddress = require('dc-postal-address');

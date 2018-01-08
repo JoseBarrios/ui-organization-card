@@ -5,37 +5,37 @@ const uiOrganizationCardTemplate = uiOrganizationCardDoc.ownerDocument.querySele
 
 class OrganizationCardViewController extends HTMLElement {
 
-  static get observedAttributes(){
-    return ['value'];
-  }
+	static get observedAttributes(){
+		return ['value'];
+	}
 
-  constructor(){
-    super();
-    this.model = new Organization();
-    const view = document.importNode(uiOrganizationCardTemplate.content, true);
-    this.shadowRoot = this.attachShadow({mode: 'open'});
-    this.shadowRoot.appendChild(view);
+	constructor(){
+		super();
+		this.model = new Organization();
+		const view = document.importNode(uiOrganizationCardTemplate.content, true);
+		this.shadowRoot = this.attachShadow({mode: 'open'});
+		this.shadowRoot.appendChild(view);
 		this.connected = false;
 
 		this.defaultEventName = 'update';
-  }
+	}
 
 	///STANDARD
 	connectedCallback() {
-    this.$container = this.shadowRoot.querySelector('.container');
-    this.$image = this.shadowRoot.querySelector('#image');
-    this.$name = this.shadowRoot.querySelector('#name');
-    this.$disambiguatingDescription = this.shadowRoot.querySelector('#disambiguatingDescription');
-    this.$addressLocality = this.shadowRoot.querySelector('#addressLocality');
-    this.$addressRegion = this.shadowRoot.querySelector('#addressRegion');
-    this.$description = this.shadowRoot.querySelector('#description');
+		this.$container = this.shadowRoot.querySelector('.container');
+		this.$image = this.shadowRoot.querySelector('#image');
+		this.$name = this.shadowRoot.querySelector('#name');
+		this.$disambiguatingDescription = this.shadowRoot.querySelector('#disambiguatingDescription');
+		this.$addressLocality = this.shadowRoot.querySelector('#addressLocality');
+		this.$addressRegion = this.shadowRoot.querySelector('#addressRegion');
+		this.$description = this.shadowRoot.querySelector('#description');
 
 		this.connected = true;
-    this._updateRendering();
+		this._updateRendering();
 	}
 
 	adoptedCallback(){
-    //console.log('adoptedCallback');
+		//console.log('adoptedCallback');
 	}
 
 	disconnectedCallback() {
@@ -51,10 +51,10 @@ class OrganizationCardViewController extends HTMLElement {
 			default:
 				console.warn(`Attribute ${attrName} is not handled, you should probably do that`);
 		}
-  }
+	}
 
-  get shadowRoot(){return this._shadowRoot;}
-  set shadowRoot(value){ this._shadowRoot = value}
+	get shadowRoot(){return this._shadowRoot;}
+	set shadowRoot(value){ this._shadowRoot = value}
 
 	get value(){
 		let value = Organization.assignedProperties(this.model);
@@ -117,7 +117,7 @@ class OrganizationCardViewController extends HTMLElement {
 		this.dispatchEvent(new CustomEvent(this.defaultEventName, {detail: value}));
 	}
 
-  _updateRendering() {
+	_updateRendering() {
 		if(this.connected && this.model){
 			if(this.$image && this.model.image){ this.$image.src = this.model.image; }
 			if(this.$name && this.model.name){ this.$name.textContent = this.model.name; }
@@ -137,7 +137,7 @@ class OrganizationCardViewController extends HTMLElement {
 
 			if(this.$description && this.model.description){ this.$description.textContent = this.model.description; }
 		}
-  }
+	}
 }
 
 window.customElements.define('ui-organization-card', OrganizationCardViewController);
